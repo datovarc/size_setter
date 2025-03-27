@@ -5,8 +5,6 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 
 part './helpers/extensions.dart';
-part './helpers/widgets/height_sized_box.dart';
-part './helpers/widgets/width_sized_box.dart';
 part './helpers/dimens.dart';
 
 abstract class SizeSetterUtils {
