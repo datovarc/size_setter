@@ -6,17 +6,20 @@ abstract class Utils {
   static BuildContext? ctx;
   static double? width;
   static double? height;
-  static double? offset;
+  static double? offsetX;
+  static double? offsetY;
   static void setSizers({
     required BuildContext context,
     required double setupWidth,
     required double setupHeight,
-    required double setupOffset,
+    required double setupOffsetX,
+    required double setupOffsetY,
   }) {
     ctx = context;
     width = setupWidth;
     height = setupHeight;
-    offset = setupOffset;
+    offsetX = setupOffsetX;
+    offsetY = setupOffsetY;
   }
 
   static double getScreenWidth(BuildContext context, num y) {
