@@ -25,7 +25,9 @@ class SizeSetter extends StatelessWidget {
   const SizeSetter({
     super.key,
     required this.child,
-    
+    required this.sourceWidth,
+    required this.sourceHeight,
+    required this.sourceOffset,
   });
   final Widget child;
   final double sourceWidth;
