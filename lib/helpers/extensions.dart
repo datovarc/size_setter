@@ -11,11 +11,11 @@ extension ContextUtils on BuildContext {
 
 extension ResponsiveSize on num {
   /// It coverts pixels to resposive height
-  double get h => Utils.getScreenHeight(Utils.ctx!, this);
+  double get h => Utils.getScreenHeight(Utils.ctx!, (this*0.95));
 
   /// It coverts pixels to resposive width
 
-  double get w => Utils.getScreenWidth(Utils.ctx!, this);
+  double get w => Utils.getScreenWidth(Utils.ctx!, (this*0.95));
 
   /// It coverts pixels to percentage height
 
@@ -25,7 +25,7 @@ extension ResponsiveSize on num {
       'The value must be between 0 to 100',
     );
 
-    return (((Utils.ctx!.screenHeight)) * this / 100);
+    return (((Utils.ctx!.screenHeight)) * (this*0.95) / 100);
   }
 
   /// It coverts pixels to percentage width
@@ -36,16 +36,16 @@ extension ResponsiveSize on num {
       'The value must be between 0 to 100',
     );
 
-    return ((Utils.ctx!.screenWidth)) * this / 100;
+    return ((Utils.ctx!.screenWidth)) * (this*0.95) / 100;
   }
 
   /// It returns responsive fot size in pixels
 
-  double get px => Utils.getpixelFontSize(Utils.ctx!, this);
+  double get px => Utils.getpixelFontSize(Utils.ctx!, (this*0.95));
 
   /// It returns responsive fot size in scalar independent pixels
 
-  double get sp => Utils.getSpFontSize(Utils.ctx!, this);
+  double get sp => Utils.getSpFontSize(Utils.ctx!, (this*0.95));
 }
 
 extension PercentageSizeBoxExtension on num {
@@ -56,7 +56,7 @@ extension PercentageSizeBoxExtension on num {
       this > 0 && this <= 100,
       'The value must be between 0 to 100',
     );
-    return SizedBox(width: Utils.ctx!.screenWidth * (this) / 100);
+    return SizedBox(width: Utils.ctx!.screenWidth * ((this*0.95)) / 100);
   }
 
   /// It returns percentage Gap based on respective height value
@@ -66,6 +66,6 @@ extension PercentageSizeBoxExtension on num {
       this > 0 && this <= 100,
       'The value must be between 0 to 100',
     );
-    return SizedBox(height: Utils.ctx!.screenHeight * (this) / 100);
+    return SizedBox(height: Utils.ctx!.screenHeight * ((this*0.95)) / 100);
   }
 }
