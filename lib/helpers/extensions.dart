@@ -48,16 +48,6 @@ extension ResponsiveSize on num {
   double get sp => Utils.getSpFontSize(Utils.ctx!, this);
 }
 
-extension DynamicSizeBoxExtension on num {
-  /// It returns responsive Gap based on respective width value
-
-  Widget get widthBox => WidthSpaceBox(size: this);
-
-  /// It returns responsive Gap based on respective height value
-
-  Widget get heightBox => HeightSpaceBox(size: this);
-}
-
 extension PercentageSizeBoxExtension on num {
   /// It returns percentage Gap based on respective width value
 
