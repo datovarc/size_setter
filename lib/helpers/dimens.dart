@@ -6,19 +6,20 @@ abstract class Utils {
   static BuildContext? ctx;
   static double? width;
   static double? height;
+  static double? offset;
   static void setSizers({
     required BuildContext context,
     required double setupWidth,
     required double setupHeight,
+    required double setupOffset,
   }) {
     ctx = context;
     width = setupWidth;
     height = setupHeight;
+    offset = setupOffset;
   }
 
   static double getScreenWidth(BuildContext context, num y) {
-    // log("Source Device   width $width and Height $height");
-
     return context.screenWidth * (y / width!);
   }
 
