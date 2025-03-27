@@ -9,21 +9,11 @@ part './helpers/widgets/height_sized_box.dart';
 part './helpers/widgets/width_sized_box.dart';
 part './helpers/dimens.dart';
 
-/// This is a class which is used to set the  Source device size from  Stateful widget
-/// for Example
-/// @override
-/// ``` dart
-/// void didChangeDependencies() {
-///    SizeSetterUtils.setSourceDeviceSize(
-///       context: context,sourceWidth: 300,  sourceHeight: 700);
-///   super.didChangeDependencies();
-/// }
-/// ```
 abstract class SizeSetterUtils {
   static void setSourceDeviceSize({
     required BuildContext context,
-    double sourceWidth = 430,
-    double sourceHeight = 932,
+    double sourceWidth = 400,
+    double sourceHeight = 820,
   }) {
     /// Set Th value to common accessable variable
     Utils.setSizers(
