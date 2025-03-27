@@ -20,10 +20,9 @@ extension ResponsiveSize on num {
   /// It coverts pixels to percentage height
 
   double get ph {
-    log((this < 1 || this > 100).toString());
     assert(
-      this > 1 && this <= 100,
-      'The value must be between 1 to 100',
+      this > 0 && this <= 100,
+      'The value must be between 0 to 100',
     );
 
     return (((Utils.ctx!.screenHeight)) * this / 100);
@@ -34,7 +33,7 @@ extension ResponsiveSize on num {
   double get pw {
     assert(
       this > 0 && this <= 100,
-      'The value must be between 1 to 100',
+      'The value must be between 0 to 100',
     );
 
     return ((Utils.ctx!.screenWidth)) * this / 100;
@@ -65,7 +64,7 @@ extension PercentageSizeBoxExtension on num {
   Widget get pWidthBox {
     assert(
       this > 0 && this <= 100,
-      'The value must be between 1 to 100',
+      'The value must be between 0 to 100',
     );
     return SizedBox(width: Utils.ctx!.screenWidth * (this) / 100);
   }
@@ -75,7 +74,7 @@ extension PercentageSizeBoxExtension on num {
   Widget get pHeightBox {
     assert(
       this > 0 && this <= 100,
-      'The value must be between 1 to 100',
+      'The value must be between 0 to 100',
     );
     return SizedBox(height: Utils.ctx!.screenHeight * (this) / 100);
   }
