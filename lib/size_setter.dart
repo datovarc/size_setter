@@ -12,11 +12,11 @@ abstract class SizeSetterUtils {
     required BuildContext context,
     double sourceWidth = 400,
     double sourceHeight = 820,
-    double offset = 1,
+    double sourceOffset = 1,
   }) {
     /// Set Th value to common accessable variable
     Utils.setSizers(
-        context: context, setupWidth: sourceWidth, setupHeight: sourceHeight, setupOffset: offset);
+        context: context, setupWidth: sourceWidth, setupHeight: sourceHeight, setupOffset: sourceOffset);
   }
 }
 
