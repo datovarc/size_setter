@@ -1,42 +1,22 @@
 part of '../size_setter.dart';
 
 extension ContextUtils on BuildContext {
-  /// It returns screen height
-  double get screenHeight => MediaQuery.of(this).size.height;
-
-  /// It returns screen width
-
-  double get screenWidth => MediaQuery.of(this).size.width;
+  double get screenHeight => MediaQuery.of(this).size.height * MediaQuery.of(this).devicePixelRatio;
+  double get screenWidth => MediaQuery.of(this).size.width * MediaQuery.of(this).devicePixelRatio;
 }
 
 extension ResponsiveSize on num {
-  /// It coverts pixels to resposive height
-  double get h => Utils.getScreenHeight(Utils.ctx!, (this*Utils.offsetY!));
-
-  /// It coverts pixels to resposive width
-
-  double get w => Utils.getScreenWidth(Utils.ctx!, (this*Utils.offsetX!));
-
-  /// It coverts pixels to percentage height
-
+  double get h => Utils.getScreenHeight(Utils.ctx!, (this * Utils.offsetY!)) * MediaQuery.of(Utils.ctx!).devicePixelRatio;
+  double get w => Utils.getScreenWidth(Utils.ctx!, (this * Utils.offsetX!)) * MediaQuery.of(Utils.ctx!).devicePixelRatio;
+  
   double get ph {
-    assert(
-      this > 0 && this <= 100,
-      'The value must be between 0 to 100',
-    );
-
-    return (((Utils.ctx!.screenHeight)) * (this*Utils.offsetY!) / 100);
+    assert(this > 0 && this <= 100, 'The value must be between 0 to 100');
+    return ((Utils.ctx!.screenHeight) * (this * Utils.offsetY!) / 100) * MediaQuery.of(Utils.ctx!).devicePixelRatio;
   }
 
-  /// It coverts pixels to percentage width
-
   double get pw {
-    assert(
-      this > 0 && this <= 100,
-      'The value must be between 0 to 100',
-    );
-
-    return ((Utils.ctx!.screenWidth)) * (this*Utils.offsetX!) / 100;
+    assert(this > 0 && this <= 100, 'The value must be between 0 to 100');
+    return ((Utils.ctx!.screenWidth) * (this * Utils.offsetX!) / 100) * MediaQuery.of(Utils.ctx!).devicePixelRatio;
   }
 
   /// It returns responsive fot size in pixels
@@ -47,6 +27,7 @@ extension ResponsiveSize on num {
 
   double get sp => Utils.getSpFontSize(Utils.ctx!, (this*Utils.offsetY!));
 }
+
 
 extension PercentageSizeBoxExtension on num {
   /// It returns percentage Gap based on respective width value
