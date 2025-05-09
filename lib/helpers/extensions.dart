@@ -6,17 +6,17 @@ extension ContextUtils on BuildContext {
 }
 
 extension ResponsiveSize on num {
-  double get h => Utils.getScreenHeight(Utils.ctx!, (this * Utils.offsetY!)) * MediaQuery.of(Utils.ctx!).devicePixelRatio;
-  double get w => Utils.getScreenWidth(Utils.ctx!, (this * Utils.offsetX!)) * MediaQuery.of(Utils.ctx!).devicePixelRatio;
+  double get h => Utils.getScreenHeight(Utils.ctx!, (this * Utils.offsetY!));
+  double get w => Utils.getScreenWidth(Utils.ctx!, (this * Utils.offsetX!));
   
   double get ph {
     assert(this > 0 && this <= 100, 'The value must be between 0 to 100');
-    return ((Utils.ctx!.screenHeight) * (this * Utils.offsetY!) / 100) * MediaQuery.of(Utils.ctx!).devicePixelRatio;
+    return ((Utils.ctx!.screenHeight) * (this * Utils.offsetY!) / 100);
   }
 
   double get pw {
     assert(this > 0 && this <= 100, 'The value must be between 0 to 100');
-    return ((Utils.ctx!.screenWidth) * (this * Utils.offsetX!) / 100) * MediaQuery.of(Utils.ctx!).devicePixelRatio;
+    return ((Utils.ctx!.screenWidth) * (this * Utils.offsetX!) / 100);
   }
 
   /// It returns responsive fot size in pixels
