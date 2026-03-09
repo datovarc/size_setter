@@ -67,7 +67,7 @@ abstract class Utils {
     const TextScaler scaler = TextScaler.linear(1.0);
 
     double widthScaleFactor = context.screenWidth / width!;
-    double heightScaleFactor = context.screenHeight / width!;
+    double heightScaleFactor = context.screenHeight / height!;
 
     double scaleFactor = widthScaleFactor < heightScaleFactor
         ? widthScaleFactor
