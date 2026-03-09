@@ -77,4 +77,15 @@ abstract class Utils {
 
     return dynamicFontSize;
   }
+
+  static double getFixedPercentFontSize(
+    BuildContext context,
+    num referenceFontSize,
+  ) {
+    // Convert design px (e.g. 20) into design-height percentage first,
+    // then apply the same process as `.ph`.
+    // percent = (px / sourceHeight) * 100
+    final percent = (referenceFontSize / height!) * 100;
+    return context.screenHeight * percent / 100;
+  }
 }
