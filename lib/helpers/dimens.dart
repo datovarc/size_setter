@@ -62,19 +62,17 @@ abstract class Utils {
     BuildContext context,
     num referenceFontSize,
   ) {
-    // Access the TextScaler for the current context
-    final TextScaler scaler = MediaQuery.textScalerOf(context);
+    // Intentionally ignore device accessibility text scaling and
+    // keep app typography deterministic.
+    const TextScaler scaler = TextScaler.linear(1.0);
 
-    // Calculate scaling factors for width and height (unchanged)
     double widthScaleFactor = context.screenWidth / width!;
     double heightScaleFactor = context.screenHeight / width!;
 
-    // Choose the smaller scaling factor (unchanged)
     double scaleFactor = widthScaleFactor < heightScaleFactor
         ? widthScaleFactor
         : heightScaleFactor;
 
-    // Calculate the dynamic font size using TextScaler
     double dynamicFontSize = scaler.scale(referenceFontSize * scaleFactor);
 
     return dynamicFontSize;
