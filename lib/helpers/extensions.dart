@@ -46,6 +46,13 @@ extension ResponsiveSize on num {
   /// It returns responsive fot size in scalar independent pixels
 
   double get sp => Utils.getSpFontSize(Utils.ctx!, (this*Utils.offsetY!));
+
+  /// It returns responsive font size using a rule-of-three conversion:
+  /// `designPx -> designHeight% -> same process as .ph`.
+  /// Example: if sourceHeight=800, `20.0.fsp` behaves like `2.5.ph`.
+
+  double get fsp =>
+      Utils.getFixedPercentFontSize(Utils.ctx!, (this * Utils.offsetY!));
 }
 
 extension PercentageSizeBoxExtension on num {
